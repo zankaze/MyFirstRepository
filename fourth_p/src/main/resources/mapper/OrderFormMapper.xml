@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xa.fourth_p.mapper.OrderFormMapper">
+<select id="getAllOrderForm" resultType="com.xa.fourth_p.pojo.OrderForm">
+    select * from OrderForm
+</select>
+<select id="getUserOrderForm" parameterType="Integer" resultType="com.xa.fourth_p.pojo.OrderForm">
+    select * from OrderForm where UserID = #{value}
+</select>
+
+    <insert id="insertOrderForm" parameterType="com.xa.fourth_p.pojo.OrderForm">
+        insert into OrderForm values(SEQ_PK_ORDID.nextval,#{userid},
+        #{username},#{addresses},#{phonenum},#{goodsname},#{goodsprice},#{goodsphoto},#{ordernum})
+    </insert>
+    <select id="getAllOrd" parameterType="com.xa.fourth_p.pojo.PageBean" resultType="com.xa.fourth_p.pojo.OrderForm">
+         SELECT * FROM
+        (SELECT A.*, ROWNUM RN FROM (SELECT * FROM OrderForm) A WHERE ROWNUM &lt; #{ParamMax})
+         WHERE RN &gt; #{ParamMin}
+    </select>
+    <select id="getOrdNum" resultType="Integer">
+        select COUNT(*) FROM OrderForm
+    </select>
+</mapper>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="file" name="file" id="file">
+<button id="upload">上传</button>
+    <img src="img/uptouxiang.bmp" id="img1" style="width: 200px;height: 200px">
+    <input type="text" id="photoname">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/amazeui.min.js"></script>
+    <script src="assets/js/app.js"></script>
+<script>
+    $(function () {
+        $("#upload").click(function(){
+            var formData = new FormData();
+            formData.append('file', $('#file')[0].files[0]);
+            $.ajax({
+                url: "testupload",
+                type: "POST",
+                data: formData,
+                async: false,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    $("#img1").attr("src",data);
+                    $("#photoname").val(data)
+                    alert("success");
+                },
+                error: function () {
+                    alert("上传失败！");
+
+                }
+            });
+        })
+    });
+</script>
+</body>
+</html>

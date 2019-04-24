@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xa.fourth_p.mapper.TestQesMapper">
+    <select id="getqes" parameterType="com.xa.fourth_p.pojo.PageBean" resultType="com.xa.fourth_p.pojo.TestQes">
+       SELECT * FROM
+        (SELECT A.*, ROWNUM RN FROM (SELECT * FROM TestQes where Question_Status = 'true') A WHERE ROWNUM &lt; #{ParamMax})
+         WHERE RN &gt; #{ParamMin}
+    </select>
+    <select id="getEXqes" parameterType="com.xa.fourth_p.dto.Qesdto" resultType="com.xa.fourth_p.pojo.TestQes">
+        select * from TESTQES where QESID=#{qid} and EXACT_ANSWER = #{answer}
+    </select>
+    <select id="getOneQES" parameterType="Integer" resultType="com.xa.fourth_p.pojo.TestQes">
+        select * from TESTQES where qesid = #{value}
+    </select>
+    <insert id="inserQes" parameterType="com.xa.fourth_p.pojo.TestQes">
+        insert into TESTQES values(SEQ_PK_QESID.nextval,#{question},#{answer_a},#{answer_b},#{answer_c},
+        #{answer_d},#{exact_answer},#{question_status},#{userid})
+    </insert>
+    <update id="updateQes" parameterType="com.xa.fourth_p.pojo.TestQes">
+        update TESTQES
+        <set>
+            <if test="question_status!=null and question_status !=  '' ">
+                Question_Status = #{question_status}
+            </if>
+        </set>
+        where qesid=#{qesid}
+         </update>
+    <select id="getAllQes" parameterType="com.xa.fourth_p.pojo.PageBean" resultType="com.xa.fourth_p.pojo.TestQes">
+         SELECT * FROM
+        (SELECT A.*, ROWNUM RN FROM (SELECT * FROM TestQes) A WHERE ROWNUM &lt; #{ParamMax})
+         WHERE RN &gt; #{ParamMin}
+    </select>
+    <select id="getQesNum" resultType="Integer">
+        select COUNT(*) FROM TestQes
+    </select>
+    <select id="getAll" resultType="com.xa.fourth_p.pojo.TestQes">
+        select * from TestQes where Question_Status = 'true'
+    </select>
+</mapper>

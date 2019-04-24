@@ -1,0 +1,300 @@
+<!doctype html>
+<html xmlns:float="http://www.w3.org/1999/xhtml" xmlns:text-align="http://java.sun.com/xml/ns/persistence/orm">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>游戏商城</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="游戏商城" />
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+
+<body data-type="generalComponents">
+
+    <header class="am-topbar am-topbar-inverse admin-header">
+        <div class="am-topbar-brand">
+            <a href="javascript:;" class="tpl-logo">
+                <img src="assets/img/logo.png" alt="">
+            </a>
+        </div>
+
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+        <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+            <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
+                <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                    <a class="am-dropdown-toggle tpl-header-list-link" >
+                        <span class="am-icon-cog"> <span class="am-badge tpl-badge-success am-round">个人中心</span></span>
+                    </a>
+                    <ul class="am-dropdown-content tpl-dropdown-content">
+                        <li class="tpl-dropdown-list-bdbc"><a  href="personal-center.html" class="tpl-dropdown-list-fl"><span class="am-icon-btn am-icon-bell-o tpl-dropdown-ico-btn-size tpl-badge-warning"></span> 个人资料中心</a>
+                        </li>
+                        <li class="tpl-dropdown-list-bdbc"><a href="order-form.html" class="tpl-dropdown-list-fl"><span class="am-icon-btn am-icon-plus tpl-dropdown-ico-btn-size tpl-badge-success"></span>我的订单中心</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                    <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
+                        <span class="am-icon-star"></span> <span class="am-badge tpl-badge-danger am-round">游戏中心</span></span>
+                    </a>
+                    <ul class="am-dropdown-content tpl-dropdown-content">
+                        <li id="youxi">
+                            <a href="questions.html" class="tpl-dropdown-content-message">
+                                <span class="tpl-dropdown-content-photo">
+                      <img src="img/quweiwenda.png" alt=""> </span>
+                                <span class="tpl-dropdown-content-subject">
+                      <span class="tpl-dropdown-content-from"> 趣味问答 </span>
+                                </span>
+                                <span class="tpl-dropdown-content-font"> 百科知识趣味问答，增长知识的同时还可以获得积分哟 </span>
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                    <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
+                        <span class="am-icon-calendar"></span> <span class="am-badge tpl-badge-primary am-round">充值</span></span>
+                    </a>
+                    <ul class="am-dropdown-content tpl-dropdown-content" id="chongzhi">
+                        <li>
+                            <a href="chongzhi.html" class="tpl-dropdown-content-message">
+                                <span class="tpl-dropdown-content-photo">
+                      <img src="img/qianbao.jpg" alt=""> </span>
+                                <span class="tpl-dropdown-content-subject">
+                      <span class="tpl-dropdown-content-from">为我的钱包充值</span>
+                                <span class="tpl-dropdown-content-font"> 充值的金额可以用来购买商品 </span>
+                                </span> </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                    <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
+                        <span class="tpl-header-list-user-nick" id="username"></span><span class="tpl-header-list-user-ico"> <img id="touxiang"></span>
+                    </a>
+                    <ul class="am-dropdown-content">
+                        <li><a href="exitUser"><span class="am-icon-power-off"></span> 退出</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </header>
+
+
+
+
+
+
+
+<div class="tpl-page-container tpl-page-header-fixed">
+    <div class="tpl-left-nav tpl-left-nav-hover">
+        <div class="tpl-left-nav-title">
+            游戏商城 列表
+        </div>
+        <div class="tpl-left-nav-list">
+            <ul class="tpl-left-nav-menu">
+                <li class="tpl-left-nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="am-icon-home"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li class="tpl-left-nav-item">
+                    <a href="table-images-list.html" class="nav-link tpl-left-nav-link-list">
+                        <i class="am-icon-bar-chart"></i>
+                        <span>商品详情</span>
+                        <i class="tpl-left-nav-content tpl-badge-danger">
+
+                        </i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <div class="tpl-content-wrapper">
+        <div class="tpl-content-page-title">
+            游戏商城 表单
+        </div>
+        <div class="tpl-portlet-components">
+            <div class="portlet-title">
+                <div class="caption font-green bold">
+                    商品详情
+                </div>
+
+            </div>
+
+            <div  >
+                <div width="300px" height="400px" style="float: left">
+                <img src="" name="goodsphoto" id="goodsphoto" width="300px" height="400px" >
+
+                </div>
+                <div text-align:center>
+
+                    <table  >
+                        <h3>
+                            <tr style="height: 100px">
+                                <br >
+                                <br >
+                                <br>
+                                <label style="width: 50px">名称：</label>
+                                <input type="text" readonly="readonly" name="goodsname" >
+                                <br>
+                                <label id="price" >单价：</label>
+                                <input type="text" readonly="readonly" name="goodsprice" >
+                                <br>
+                                <label id="prices">总价：</label>
+                                <input type="text" readonly="readonly" name="prices" >
+                                <br>
+                                <label>数量：
+                                    <button onclick="subt()">-</button>
+                                    <input type="text" id="quantity" name="goodsnum" value="1" style="width: 30px"/>
+                                    <button onclick="add()">+</button>
+                                </label>
+                                <br>
+                            </tr>
+                        </h3>
+                    </table>
+                    <div class="am-u-sm-9 am-u-sm-push-3">
+                        <button type="button"  class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">购买</button>
+                    </div>                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        ×
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel" style="color: #0f9ae0">
+                        本次支付由U盾为您保驾护航
+                    </h4>
+                </div>
+
+                <div class="modal-body">
+                    请输入您的密码:
+                    <input type="password" id="password" style="width: 350px;" name="user_name"/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">再考虑一下
+                    </button>
+                    <button type="button" onclick="oks()" class="btn btn-primary">
+                        确认购买
+                    </button>
+                </div>
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+</div>
+
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/amazeui.min.js"></script>
+    <script src="assets/js/iscroll.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="js/getInfo.js"></script>
+<script type="text/javascript">
+    var Ohref = window.location.href;
+    var arrhref = Ohref.split("=");
+    goodsid = arrhref[1];
+    $.ajax({
+        type: "get",
+        url: "getOneG?gid="+goodsid,
+        async: false,
+        contentType: "application/json; charset=utf-8",
+        success: function(data) {
+            $("#goodsphoto").attr("src",data.goodsphoto);
+            $("input[name='goodsname']").attr("value",data.goodsname);
+            $("input[name='goodsprice']").attr("value",data.goodsprice);
+            var prices= (data.goodsprice)*($("input[name='goodsnum']").val());
+
+            $("input[name='prices']").attr("value",prices);
+        }
+
+    })
+
+    /*商品数量+1*/
+  function add(){
+            var quantity = document.getElementById("quantity").value;
+             var num_add = parseInt(quantity)+1;
+           var price=document.getElementById("price").value;
+             if(quantity==""){
+                  num_add = 1;
+                 }
+           if(num_add>10){
+                 document.getElementById("quantity").value=num_add-1;
+                   alert("商品数量不能大于10");
+                }else{
+                   document.getElementById("quantity").value=num_add;
+                }
+            var p = $("input[name='goodsprice']").val()
+      var totalprice = Number(p) * Number(num_add);
+      $("input[name='prices']").attr("value",totalprice);
+         }
+   /*商品数量-1*/
+      function subt(){
+             var quantity = document.getElementById("quantity").value;
+            var price=document.getElementById("price").value;
+            var num_dec = parseInt(quantity)-1;
+            if(num_dec>0){
+                     document.getElementById("quantity").value=num_dec;
+
+                 }
+          var p = $("input[name='goodsprice']").val()
+          var totalprice = Number(p) * Number(num_dec);
+          $("input[name='prices']").attr("value",totalprice);
+          }
+
+        function oks() {
+            pw = $("input[name='user_name']").val();
+            num = $("input[name='goodsnum']").val();
+            $.ajax({
+                type: "get",
+                url: "GouMai1?gid="+goodsid+"&pw="+pw+"&num="+num,
+                async: false,
+                contentType: "application/json; charset=utf-8",
+                success: function(data) {
+                if (data=="true"){
+                    alert("购买成功")
+                    window.location.href="table-images-list.html";
+                }else{
+                    alert(data)
+                }
+                }
+            })
+        }
+</script>
+</body>
+
+</html>
