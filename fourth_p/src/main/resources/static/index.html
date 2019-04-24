@@ -1,0 +1,215 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin index Examples</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="assets/js/echarts.min.js"></script>
+</head>
+
+<body data-type="index">
+
+
+    <header class="am-topbar am-topbar-inverse admin-header">
+        <div class="am-topbar-brand">
+            <a href="javascript:;" class="tpl-logo">
+                <img src="assets/img/logo.png" alt="">
+            </a>
+        </div>
+
+        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+        <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+            <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
+                <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                    <a class="am-dropdown-toggle tpl-header-list-link" >
+                        <span class="am-icon-cog"> <span class="am-badge tpl-badge-success am-round">个人中心</span></span>
+                    </a>
+                    <ul class="am-dropdown-content tpl-dropdown-content">
+                        <li class="tpl-dropdown-list-bdbc"><a  href="personal-center.html" class="tpl-dropdown-list-fl"><span class="am-icon-btn am-icon-bell-o tpl-dropdown-ico-btn-size tpl-badge-warning"></span> 个人资料中心</a>
+                        </li>
+                        <li class="tpl-dropdown-list-bdbc"><a href="order-form.html" class="tpl-dropdown-list-fl"><span class="am-icon-btn am-icon-plus tpl-dropdown-ico-btn-size tpl-badge-success"></span>我的订单中心</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                    <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
+                        <span class="am-icon-star"></span> <span class="am-badge tpl-badge-danger am-round">游戏中心</span></span>
+                    </a>
+                    <ul class="am-dropdown-content tpl-dropdown-content">
+                        <li id="youxi">
+                            <a href="questions.html" class="tpl-dropdown-content-message">
+                                <span class="tpl-dropdown-content-photo">
+                      <img src="img/quweiwenda.png" alt=""> </span>
+                                <span class="tpl-dropdown-content-subject">
+                      <span class="tpl-dropdown-content-from"> 趣味问答 </span>
+                                </span>
+                                <span class="tpl-dropdown-content-font"> 百科知识趣味问答，增长知识的同时还可以获得积分哟 </span>
+                            </a>
+
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                    <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
+                        <span class="am-icon-calendar"></span> <span class="am-badge tpl-badge-primary am-round">充值</span></span>
+                    </a>
+                    <ul class="am-dropdown-content tpl-dropdown-content" id="chongzhi">
+                        <li>
+                            <a href="chongzhi.html" class="tpl-dropdown-content-message">
+                                <span class="tpl-dropdown-content-photo">
+                      <img src="img/qianbao.jpg" alt=""> </span>
+                                <span class="tpl-dropdown-content-subject">
+                      <span class="tpl-dropdown-content-from">为我的钱包充值</span>
+                                <span class="tpl-dropdown-content-font"> 充值的金额可以用来购买商品 </span>
+                                </span> </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+                <li class="am-dropdown" data-am-dropdown data-am-dropdown-toggle>
+                    <a class="am-dropdown-toggle tpl-header-list-link" href="javascript:;">
+                        <span class="tpl-header-list-user-nick" id="username"></span><span class="tpl-header-list-user-ico"> <img id="touxiang"></span>
+                    </a>
+                    <ul class="am-dropdown-content">
+                        <li><a href="exitUser"><span class="am-icon-power-off"></span> 退出</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </header>
+
+
+        <div class="tpl-content-wrapper tpl-content-wrapper-hover">
+            <div class="tpl-content-page-title">
+                游戏商城
+            </div>
+            <ol class="am-breadcrumb">
+                <li><a href="#" class="am-icon-home">首页</a></li>
+                <li><a href="#">分类</a></li>
+                <li class="am-active">内容</li>
+            </ol>
+            <center>
+            <div class="tpl-content-scope">
+            <div class="note note-info">
+                <h3>游戏商城 为用户而生
+                    <span class="close" data-close="note"></span>
+                </h3>
+                <p> 游戏商城 我们的宗旨是，用心创造快乐，没钱同样畅玩（个屁嘞）</p>
+                <p><span class="label label-danger">提示:</span> 游戏商城  为用户实现更好的体验效果。
+                </p>
+            </div>
+        </div>
+            </center>
+            <div class="row">
+                <div class="am-u-md-6 am-u-sm-12 row-mb">
+                    <div class="tpl-portlet">
+                        <div class="tpl-portlet-title">
+                            <div class="tpl-caption font-red ">
+                                <i class="am-icon-bar-chart"></i>
+                                <span>游戏积分排行榜</span>
+                            </div>
+                        </div>
+                        <div class="tpl-scrollable">
+                            <div class="number-stats">
+                                <div class="stat-number am-fr am-u-md-6">
+                                    <div class="title"> 我的积分 </div>
+                                    <div class="number am-text-success"><span id="jifen"></span></div>
+                                </div>
+
+                            </div>
+
+                            <table class="am-table tpl-table">
+                                <thead>
+                                <tr class="tpl-table-uppercase">
+                                    <th>昵称</th>
+                                    <th>总积分</th>
+                                    <th>全网排名</th>
+                                    <th>VIP等级</th>
+                                </tr>
+                                </thead>
+                                <tbody id="testtb">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="am-u-md-6 am-u-sm-12 row-mb">
+                    <div class="tpl-portlet">
+                     
+
+                        <!--此部分数据请在 js文件夹下中的 app.js 中的 “百度图表A” 处修改数据 插件使用的是 百度echarts-->
+                        <div class="tpl-echarts" id="tpl-echarts-A" style="height:458px; width: 656px;">
+                            <div style="height:200px; width: 600px;">
+                                <center><h2><font color="#ff8c00">积分足够了么？快来兑换奖品吧！</font></h2></center>
+                               <a href="table-images-list.html"> <img src="img/dong2.gif" style="height:225px; width: 600px;"> </a>
+                            </div>
+                            <br>
+                            <div style="height:200px; width: 600px;">
+                                <a href="table-images-list.html"> <img src="img/dong1.gif" style="height:225px; width: 600px;"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/amazeui.min.js"></script>
+    <script src="assets/js/iscroll.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="js/getInfo.js"></script>
+	<script type="text/javascript">
+
+            $.ajax({
+                type:"get",
+                url:"paiming",
+                async: false,
+                contentType: "application/json; charset=utf-8",
+                success:function (data) {
+                    var num = 1
+                    $.each(data,function(index,element){
+                        var Str = "<tr>\n" +
+                            "<td>\n" +
+                            "<img src='"+element.headportrait+"' alt=\"\" class=\"user-pic\">\n" +
+                            "<a class=\"user-name\" href=\"###\">"+element.username+"</a>\n" +
+                            "</td>\n" +
+                            "<td>"+element.userintegral+"</td>\n" +
+                            "<td>"+num+"</td>\n" +
+                            "<td class=\"font-green bold\">"+element.userlevel+"</td>\n" +
+                            "</tr>"
+                        $("#testtb").append(Str);
+                        num++;
+                    });
+
+                    }
+
+            });
+
+
+</script>
+    </body>
+
+</html>

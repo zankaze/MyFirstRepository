@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xa.fourth_p.mapper.GoodsMapper">
+<select id="getAllGoods" resultType="com.xa.fourth_p.pojo.Goods">
+    select * from Goods where GoodsNum > 0 and GOODSSTATUS='true'
+</select>
+    <select id="getAllGoods2" resultType="com.xa.fourth_p.pojo.Goods">
+    select * from Goods
+</select>
+<select id="getOneGoods" parameterType="Integer" resultType="com.xa.fourth_p.pojo.Goods">
+    select * from Goods where GoodsID = #{value}
+</select>
+    <select id="checkGoodsLike" parameterType="com.xa.fourth_p.pojo.Goods" resultType="com.xa.fourth_p.pojo.Goods">
+        select * from Goods
+        <where>
+            GOODSSTATUS='true'
+            <if test="goodsname!=null">
+                and  instr(GoodsName,#{goodsname})>0
+            </if>
+        </where>
+    </select>
+    <select id="GetGoodsNum" resultType="Integer">
+        select COUNT(*) from Goods where GOODSSTATUS='true'
+    </select>
+    <select id="GoodsFenye" parameterType="com.xa.fourth_p.pojo.PageBean" resultType="com.xa.fourth_p.pojo.Goods">
+         SELECT * FROM
+        (SELECT A.*, ROWNUM RN FROM (SELECT * FROM Goods where GOODSSTATUS='true') A WHERE ROWNUM &lt; #{ParamMax} )
+         WHERE RN &gt; #{ParamMin}
+    </select>
+    <select id="GoodsFenye2" parameterType="com.xa.fourth_p.pojo.PageBean" resultType="com.xa.fourth_p.pojo.Goods">
+         SELECT * FROM
+        (SELECT A.*, ROWNUM RN FROM (SELECT * FROM Goods) A WHERE ROWNUM &lt; #{ParamMax} )
+         WHERE RN &gt; #{ParamMin}
+    </select>
+    <insert id="insertGoods" parameterType="com.xa.fourth_p.pojo.Goods">
+        insert into Goods values(SEQ_PK_GOODSID.nextval,#{goodsname},#{goodsprice},
+        #{goodsphoto},#{goodsnum},#{goodsintro},#{goodsstatus})
+    </insert>
+    <delete id="deleteGoods" parameterType="com.xa.fourth_p.pojo.Goods">
+        delete from Goods where GoodsID = #{value}
+    </delete>
+    <update id="updateGoods" parameterType="com.xa.fourth_p.pojo.Goods">
+        update Goods
+        <set>
+            <if test="goodsname!=null and goodsname !=  '' ">
+                GoodsName = #{goodsname},
+            </if>
+            <if test="goodsprice!=null and goodsprice !=  '' ">
+                GoodsPrice = #{goodsprice},
+            </if>
+            <if test="goodsnum!=null">
+                GoodsNum = #{goodsnum},
+            </if>
+            <if test="goodsphoto!=null and goodsphoto !=  '' ">
+                GoodsPhoto = #{goodsphoto},
+            </if>
+            <if test="goodsstatus!=null">
+                GoodsStatus = #{goodsstatus}
+            </if>
+        </set>
+        where GoodsID=#{goodsid}
+    </update>
+    <select id="getOneGoodsByName" parameterType="java.lang.String" resultType="com.xa.fourth_p.pojo.Goods">
+        select * from Goods where GoodsName = #{value}
+    </select>
+</mapper>
